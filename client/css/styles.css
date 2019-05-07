@@ -1,0 +1,89 @@
+
+
+body {background-color: cornsilk;}
+
+#see-debug-mode {
+  background-color: wheat;
+  text-align: center;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+#debug-details {
+  display: none;
+  overflow: hidden;
+}
+
+#record_button {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: wheat;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 9px #999;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+   margin: 20px 20px;
+}
+
+#record_button:active {
+  background-color: tan;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.center {
+  text-align: center;
+}
+
+
+.w3-container {
+  text-align: center;
+}
+
+
+@font-face {
+    font-family: 'Harry-Potter';
+    src:url('fonts/Harry-Potter.ttf.woff') format('woff'),
+        url('fonts/Harry-Potter.ttf.svg#Harry-Potter') format('svg'),
+        url('fonts/Harry-Potter.ttf.eot'),
+        url('fonts/Harry-Potter.ttf.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+  margin: 20px 10px 10px 10px;
+  font-family: 'Harry-Potter';
+}
+
+input {
+  background-color: wheat;
+  border: none;
+}
+
+select {
+  background-color: wheat;
+  border: none;
+
+}
+
+.user-input {
+  margin: 20px 20px;
+  font-size: 18px;
+  font-family: 'Harry-Potter';
+}
+
+.user-display {
+  text-align: justify;
+  margin: 10px 10px;
+}
+
+.center-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+ }

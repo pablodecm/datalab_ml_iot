@@ -183,13 +183,16 @@
                      "wingardium-leviosa" : "Makes objects levitate.",
                      "lumos" : "Lights up the wand or nearby lights.",
                      "reparo": "Repairs broken objects."};
-      spell_select_el.onchange = function() {
+                     
+      function on_spell_change () {
         spell_name = spell_select_el.value 
         if (spell_select_el.value in spell_text) {
           document.getElementById("spell-description").innerHTML = spell_text[spell_name] +
           " <br> <img class='center-image' src='images/" + spell_name + ".svg' width='50%' />";
         }
-      };
+      }
+      spell_select_el.onchange = on_spell_change;
+      
 
 
       // show debug mode if clicked

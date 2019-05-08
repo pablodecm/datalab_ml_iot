@@ -18,10 +18,10 @@ Here there is a list and a short description of each part of the tutorial:
   overview of the tutorial.
   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/github/pablodecm/datalab_ml_iot/blob/master/00_introduction/introduction.ipynb)
 
-1. `01_predictive_maintenance/predictive_maintenance.ipynb`: predict when an turbofan
+1. `01_predictive_mainteinance/predictive_maintenance.ipynb`: predict when an turbofan
   plane engine will break based on reading of the integrated sensors so costly maintenance
   tasks can be scheduled smartly.
-  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/github/pablodecm/datalab_ml_iot/blob/master/01_predictive_maintenance/predictive_maintenance.ipynb)
+  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/github/pablodecm/datalab_ml_iot/blob/master/01_predictive_mainteinance/predictive_maintenance.ipynb)
 
 2. `02_trip_duration_prediction/trip_duration_prediction.ipynb`:  based real-world Taxi
   data from New York city in 2016, predict the duration of a taxi trip based on the
@@ -33,9 +33,10 @@ Here there is a list and a short description of each part of the tutorial:
   based on our own sensor data. 
   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/github/pablodecm/datalab_ml_iot/blob/master/03_internet_of_wands/internet_of_wands.ipynb)
 
-4. `04_camera_object_detection/camera_object_detection.ipynb` (WIP): using a pre-trained state-of-the-art
+4. `04_camera_object_recognition/camera_object_recognition.ipynb` (WIP): using a pre-trained state-of-the-art
    object detection system to identify and count the various objects in traffic camera footage.
-  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/github/pablodecm/datalab_ml_iot/blob/master/04_camera_object_detection/camera_object_detection.ipynb)
+  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/github/pablodecm/datalab_ml_iot/blob/master/04_camera_object_recognition/camera_object_recognition.ipynb)
+
 
 
 

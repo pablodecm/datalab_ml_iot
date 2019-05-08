@@ -166,7 +166,7 @@
       var client = new Paho.MQTT.Client(
         loc.hostname,
         Number(loc.port),
-        "client"
+        Math.random().toString(36).substr(2, 9)
       );
 
       // connect the client

@@ -155,6 +155,7 @@
     var selected_spell = localStorage.getItem("selected-spell");
     if (selected_spell){
       spell_select_el.value = selected_spell;
+      spell_select_el.onchange();
     }
     
     function storeInput () {

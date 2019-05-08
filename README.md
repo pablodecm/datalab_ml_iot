@@ -3,6 +3,9 @@
 These repository includes the materials for two lectures on on Machine Learning
 applied to IoT data for the Master of Data Science (jointly organised by UC-UIMP-CSIC)
 
+Join this Gitter room for related questions and announcements:
+[![Gitter](https://badges.gitter.im/datalab_ml_iot/community.svg)](https://gitter.im/datalab_ml_iot/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 
 ## Notebooks
 
@@ -36,6 +39,7 @@ Here there is a list and a short description of each part of the tutorial:
 4. `04_camera_object_recognition/camera_object_recognition.ipynb` (WIP): using a pre-trained state-of-the-art
    object detection system to identify and count the various objects in traffic camera footage.
   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/github/pablodecm/datalab_ml_iot/blob/master/04_camera_object_recognition/camera_object_recognition.ipynb)
+
 
 
 

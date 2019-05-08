@@ -20,6 +20,15 @@
     <div class="w3-container w3-card">
       <h1>Internet of Wands</h1>
     </div>
+    
+    
+    <div class="center">
+
+    <button type="button" id="connect_button">
+      Not connected
+    </button>
+  </div>
+
 
     <div class="user-input">
 
@@ -172,17 +181,29 @@
       // connect the client
       client.connect({ onSuccess: onConnect, useSSL: true, userName : "datalab", password : "datalab" });
 
+      let n_msg_del = 0;
       // called when the client connects
       function onConnect() {
-        console.log("onConnect");
+        connect_button = document.getElementById("connect_button")
+        connect_button.innerHTML = "Connected";
+        connect_button.style.backgroundColor = "palegreen";
       }
 
       // called when the client loses its connection
       function onConnectionLost(responseObject) {
-        if (responseObject.errorCode !== 0) {
-          console.log("onConnectionLost: " + responseObject.errorMessage);
-        }
+        connect_button = document.getElementById("connect_button")
+        connect_button.innerHTML = "Not Connected";
+        connect_button.style.backgroundColor = "#FF91A4"; 
       }
+      
+      function onMessageDelivered(message) {
+        connect_button = document.getElementById("connect_button")
+        n_msg_del += 1;
+        connect_button.innerHTML = "Connected ("+ n_msg_del + " delivered)";
+      }
+      
+      client.onConnectionLost = onConnectionLost;
+      client.onMessageDelivered = onMessageDelivered;
 
       // will be run when the button is pressed
       let start_timestamp;
@@ -227,6 +248,15 @@
       record_button.addEventListener("touchend", stop_record, {
         passive: true
       });
+      
+      setInterval(function a() {
+        if (!client.isConnected()) {
+          connect_button = document.getElementById("connect_button")
+          connect_button.innerHTML = "Refresh Page";
+          connect_button.style.backgroundColor = "#FF91A4";
+          location.reload(true);
+        }
+      }, 5000);
 
     </script>
   </body>

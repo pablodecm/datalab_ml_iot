@@ -34,6 +34,18 @@ body {background-color: cornsilk;}
   transform: translateY(4px);
 }
 
+#connect_button {
+  border-radius: 6px;
+  width: 60%;
+  height: auto;
+  background-color: #FF91A4;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+   margin: 20px 20px;
+}
+
 .center {
   text-align: center;
 }

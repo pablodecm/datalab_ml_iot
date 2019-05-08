@@ -133,9 +133,42 @@
 
     <script>
 
-
+    // will be acessed later
+    var wizard_name_el = document.getElementById("wizard-name")
+    var browser_select_el = document.getElementById("browser-select")
+    var device_select_el = document.getElementById("device-select")
+    var spell_select_el = document.getElementById("spell-select")
+    
+    // load stored variables
+    var named_wizard = localStorage.getItem("named-wizard");
+    if (named_wizard){
+      wizard_name_el.value = named_wizard;
+    }
+    var selected_browser = localStorage.getItem("selected-browser");
+    if (selected_browser) {
+      browser_select_el.value = selected_browser;
+    }
+    var selected_device = localStorage.getItem("selected-device");
+    if (selected_device){
+      device_select_el.value = selected_device;
+    }
+    var selected_spell = localStorage.getItem("selected-spell");
+    if (selected_spell){
+      spell_select_el.value = selected_spell;
+    }
+    
+    function storeInput () {
+      try {
+        localStorage.setItem("named-wizard", wizard_name_el.value );
+        localStorage.setItem("selected-browser", browser_select_el.value);
+        localStorage.setItem("selected-device", device_select_el.value);
+        localStorage.setItem("selected-spell", spell_select_el.value);
+      } catch {e} {
+        // possibly run out of store
+      }
+    }
+    
       // in case safari is selected
-      browser_select_el = document.getElementById("browser-select")
       browser_select_el.onchange = function() {
         if (browser_select_el.value == "safari") {
           document.getElementById("spell-description").innerHTML = "Safari and Sensors know issue: <br>" +
@@ -149,7 +182,6 @@
                      "wingardium-leviosa" : "Makes objects levitate.",
                      "lumos" : "Lights up the wand or nearby lights.",
                      "reparo": "Repairs broken objects."};
-      spell_select_el = document.getElementById("spell-select")
       spell_select_el.onchange = function() {
         spell_name = spell_select_el.value 
         if (spell_select_el.value in spell_text) {
@@ -181,7 +213,7 @@
       // connect the client
       client.connect({ onSuccess: onConnect, useSSL: true, userName : "datalab", password : "datalab" });
 
-      let n_msg_del = 0;
+      var n_msg_del = 0;
       // called when the client connects
       function onConnect() {
         connect_button = document.getElementById("connect_button")
@@ -208,6 +240,7 @@
       // will be run when the button is pressed
       let start_timestamp;
       function start_record(event) {
+        storeInput();
         accel_data = { timestamp: [], x: [], y: [], z: [] };
         gyro_data = { timestamp: [], x: [], y: [], z: [] };
         start_timestamp = Date.now();
@@ -224,10 +257,10 @@
         document.getElementById("recording").innerHTML = "No";
         stop_sensors();
 
-        wizard_name = document.getElementById("wizard-name").value
-        device_select = document.getElementById("device-select").value
-        browser_select = document.getElementById("browser-select").value
-        spell_select = document.getElementById("spell-select").value
+        wizard_name = wizar_name_el.value
+        device_select = device_select_el.value
+        browser_select = browser_select_el.value
+        spell_select = spell_select_el.value
         data_json = {accel_data : accel_data,
                      gyro_data : gyro_data,
                      wizard_name : wizard_name,

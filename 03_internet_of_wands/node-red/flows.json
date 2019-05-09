@@ -1,0 +1,472 @@
+[
+    {
+        "id": "817c3a69.503908",
+        "type": "tab",
+        "label": "save_iow_data",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "2c026a1e.b29606",
+        "type": "tab",
+        "label": "zip_data",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "3f333cf3.30afb4",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "Mosquito Broker",
+        "broker": "iow.pablodecm.com",
+        "port": "8883",
+        "tls": "",
+        "clientid": "node-red",
+        "usetls": true,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "4d316cc6.95a644",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "6e27725c.877a7c",
+        "type": "ui_group",
+        "z": "",
+        "name": "sensor_charts",
+        "tab": "e49d3489.dbf6f8",
+        "disp": false,
+        "width": "24",
+        "collapse": false
+    },
+    {
+        "id": "e49d3489.dbf6f8",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Sensor Charts",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "c1241b3c.318c18",
+        "type": "ui_group",
+        "z": "",
+        "name": "Participation",
+        "tab": "4a4d9294.c80c5c",
+        "disp": true,
+        "width": "20",
+        "collapse": false
+    },
+    {
+        "id": "4a4d9294.c80c5c",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Participation",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "1c42b6b2.780a99",
+        "type": "mqtt in",
+        "z": "817c3a69.503908",
+        "name": "get_training_sample",
+        "topic": "training",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "3f333cf3.30afb4",
+        "x": 310,
+        "y": 280,
+        "wires": [
+            [
+                "6188afb0.d0847"
+            ]
+        ]
+    },
+    {
+        "id": "6188afb0.d0847",
+        "type": "json",
+        "z": "817c3a69.503908",
+        "name": "parse_as_json",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 540,
+        "y": 280,
+        "wires": [
+            [
+                "9ecca615.a3d168",
+                "516b5af0.6e1614",
+                "29335339.fc089c",
+                "9ad7c00e.9c40b"
+            ]
+        ]
+    },
+    {
+        "id": "9ecca615.a3d168",
+        "type": "function",
+        "z": "817c3a69.503908",
+        "name": "set_filename",
+        "func": "base_path = \"/home/pablodecm/iow_data/\";\nspell_select = msg.payload.spell_select;\nwizard_name = msg.payload.wizard_name;\nmsg.filename = base_path + spell_select +\n\"/\" +wizard_name + \"_\" + msg._msgid + \".json\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 790,
+        "y": 280,
+        "wires": [
+            [
+                "18e05bf5.820d04"
+            ]
+        ]
+    },
+    {
+        "id": "18e05bf5.820d04",
+        "type": "file",
+        "z": "817c3a69.503908",
+        "name": "write_to_file",
+        "filename": "",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 1130,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aa1bfd70.96236",
+        "type": "ui_chart",
+        "z": "817c3a69.503908",
+        "name": "",
+        "group": "6e27725c.877a7c",
+        "order": 1,
+        "width": "12",
+        "height": "12",
+        "label": "accel_chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 1190,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "516b5af0.6e1614",
+        "type": "function",
+        "z": "817c3a69.503908",
+        "name": "accel_to_chart",
+        "func": "\naccel_data = msg.payload.accel_data\n\n\naccel_object = {series : [\"X\", \"Y\", \"Z\"],\n                data: [[],[],[]],\n                labels : [\"X\", \"Y\", \"Z\"]};\n\n\nfor (let i=0; i < accel_data.timestamp.length; i++) {\n    x = accel_data.timestamp[i]\n    accel_object.data[0].push({x : x,\n        y : accel_data.x[i]\n    });\n    accel_object.data[1].push({x : x,\n        y : accel_data.y[i]\n    });\n    accel_object.data[2].push({x : x,\n        y : accel_data.z[i]\n    });\n}\n\nmsg.payload = [accel_object]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 940,
+        "y": 520,
+        "wires": [
+            [
+                "aa1bfd70.96236"
+            ]
+        ]
+    },
+    {
+        "id": "29335339.fc089c",
+        "type": "function",
+        "z": "817c3a69.503908",
+        "name": "gyro_to_chart",
+        "func": "\ngyro_data = msg.payload.gyro_data\n\n\ngyro_object = {series : [\"alpha\", \"beta\", \"gamma\"],\n               data: [[],[],[]],\n               labels : [\"alpha\", \"beta\", \"gamma\"]};\n\n\nfor (let i=0; i < gyro_data.timestamp.length; i++) {\n    x = gyro_data.timestamp[i]\n    gyro_object.data[0].push({x : x,\n        y : gyro_data.x[i]\n    });\n    gyro_object.data[1].push({x : x,\n        y : gyro_data.y[i]\n    });\n    gyro_object.data[2].push({x : x,\n        y : gyro_data.z[i]\n    });\n}\n\nmsg.payload = [gyro_object]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 940,
+        "y": 640,
+        "wires": [
+            [
+                "616ae192.72de"
+            ]
+        ]
+    },
+    {
+        "id": "616ae192.72de",
+        "type": "ui_chart",
+        "z": "817c3a69.503908",
+        "name": "",
+        "group": "6e27725c.877a7c",
+        "order": 2,
+        "width": "12",
+        "height": "12",
+        "label": "gyro_chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 1190,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9ad7c00e.9c40b",
+        "type": "function",
+        "z": "817c3a69.503908",
+        "name": "bar_chart_participation",
+        "func": "\nwizard_name = msg.payload.wizard_name;\nspell_name = msg.payload.spell_select;\n\nvar p_counts = flow.get('p_counts')||{};\n\n\nspell_list = [\"choose\",\n              \"alohomora\",\n              \"wingardium-leviosa\",\n              \"lumos\",\n              \"reparo\"];\nif (wizard_name in p_counts) {\n    p_counts[wizard_name][spell_list.indexOf(spell_name)]+=1;\n} else {\n    p_counts[wizard_name] = [0, 0, 0, 0, 0];\n    p_counts[wizard_name][spell_list.indexOf(spell_name)]+=1;\n}\n\nflow.set('p_counts', p_counts);\n\n\n\nbar_object = { \"series\" : [],\n               \"data\" : [],\n               \"labels\" : spell_list\n};\n\nfor (var name in p_counts) {\n    bar_object[\"series\"].push(name);\n    bar_object[\"data\"].push(p_counts[name]);\n}\n\nmsg.payload = [bar_object];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1010,
+        "y": 80,
+        "wires": [
+            [
+                "8913dfbb.c839b",
+                "31fde04e.7c018"
+            ]
+        ]
+    },
+    {
+        "id": "8913dfbb.c839b",
+        "type": "debug",
+        "z": "817c3a69.503908",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1450,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "31fde04e.7c018",
+        "type": "ui_chart",
+        "z": "817c3a69.503908",
+        "name": "",
+        "group": "c1241b3c.318c18",
+        "order": 0,
+        "width": "0",
+        "height": "0",
+        "label": "chart",
+        "chartType": "bar",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 1290,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "11d1a7ef.9a8938",
+        "type": "exec",
+        "z": "2c026a1e.b29606",
+        "command": "zip -r \"iow_data_zips/iow_data_\"$(date +%H-%M-%m-%d-%Y) iow_data",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 630,
+        "y": 280,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "2a1e5a41.958d06",
+        "type": "inject",
+        "z": "2c026a1e.b29606",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 140,
+        "y": 280,
+        "wires": [
+            [
+                "11d1a7ef.9a8938"
+            ]
+        ]
+    }
+]

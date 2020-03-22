@@ -1,0 +1,14 @@
+name: datalab_ml_iot
+channels:
+  - conda-forge
+dependencies:
+  - python=3.6
+  - numpy
+  - matplotlib
+  - pandas
+  - rise
+  - pip
+  - jupyter
+  - jupyter_nbextensions_configurator
+  - pip:
+    - jupyter-contrib-nbextensions

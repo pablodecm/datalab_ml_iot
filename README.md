@@ -40,6 +40,6 @@ Here there is a list and a short description of each part of the tutorial:
   based on our own sensor data. 
   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/github/pablodecm/datalab_ml_iot/blob/master/04_internet_of_wands/internet_of_wands.ipynb)
 
-5. `05_computer_vision_for_iot/computer_vision_for_iot.ipynb` (WIP): using a pre-trained state-of-the-art
-   object detection system to identify and count the various objects in traffic camera footage.
+5. `05_computer_vision_for_iot/computer_vision_for_iot.ipynb` (WIP): we will use pre-trained
+   computer vision models that could run on the edge to identify and analyse objects in video camera footage
   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/github/pablodecm/datalab_ml_iot/blob/master/05_computer_vision_for_iot/computer_vision_for_iot.ipynb)

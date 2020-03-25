@@ -15,3 +15,4 @@ dependencies:
     - jupyter-contrib-nbextensions
     - tensorflow-gpu==1.15
     - kaggle==1.5.6
+    - pip install j2cli[yaml]

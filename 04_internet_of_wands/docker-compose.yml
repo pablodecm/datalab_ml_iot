@@ -1,0 +1,39 @@
+
+version: "3.7"
+
+services:
+  node-red:
+    build: node-red/.
+    environment:
+      - TZ=Europe/Amsterdam
+    ports:
+      - "1880:1880"
+    networks:
+      - default
+    volumes:
+      - node-red-data:/data
+
+
+  mosquitto:
+    image: eclipse-mosquitto
+    networks:
+      - default
+    ports:
+      - 8083:8083
+      - 9001:9001
+    volumes: 
+      - ./mosquitto/dev.conf:/mosquitto/config/mosquitto.conf
+  
+  nginx:
+    build: nginx/.
+    ports:
+      - 80:80
+    volumes:
+      - ./dev-static:/usr/share/nginx/html
+
+
+volumes:
+  node-red-data:
+
+networks:
+  default:

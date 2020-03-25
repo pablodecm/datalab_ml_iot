@@ -3,11 +3,11 @@
 These repository includes the materials for three lectures on Data Science
 applied to IoT data for the Master of Data Science (jointly organised by UC-UIMP-CSIC).
 
-Join this Gitter room for related questions and announcements:
-[![Gitter](https://badges.gitter.im/datalab_ml_iot/community.svg)](https://gitter.im/datalab_ml_iot/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+Join one of this Gitter rooms for related questions and announcements:
+  - 2020 UC-UIMP-CSIC Master of Data Science [![Gitter](https://badges.gitter.im/datalab_ml_iot/community.svg)]([![Gitter](https://badges.gitter.im/datalab_ml_iot/master_2020_unican.svg)](https://gitter.im/datalab_ml_iot/master_2020_unican?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge))
 
 
-## Notebooks
+## Use Cases and Notebooks
 
 The tutorial is broken in six parts, each contained within a folder and based around
 a single Jupyter Notebook with a description and exercises.
@@ -43,10 +43,3 @@ Here there is a list and a short description of each part of the tutorial:
 5. `05_computer_vision_for_iot/computer_vision_for_iot.ipynb` (WIP): using a pre-trained state-of-the-art
    object detection system to identify and count the various objects in traffic camera footage.
   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/github/pablodecm/datalab_ml_iot/blob/master/05_computer_vision_for_iot/computer_vision_for_iot.ipynb)
-
-
-
-
-
-
-

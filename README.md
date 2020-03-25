@@ -4,7 +4,7 @@ These repository includes the materials for three lectures on Data Science
 applied to IoT data for the Master of Data Science (jointly organised by UC-UIMP-CSIC).
 
 Join one of this Gitter rooms for related questions and announcements:
-  - 2020 UC-UIMP-CSIC Master of Data Science [![Gitter](https://badges.gitter.im/datalab_ml_iot/community.svg)]([![Gitter](https://badges.gitter.im/datalab_ml_iot/master_2020_unican.svg)](https://gitter.im/datalab_ml_iot/master_2020_unican?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge))
+  - 2020 UC-UIMP-CSIC Master of Data Science [![Gitter](https://badges.gitter.im/datalab_ml_iot/master_2020_unican.svg)](https://gitter.im/datalab_ml_iot/master_2020_unican?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 
 ## Use Cases and Notebooks

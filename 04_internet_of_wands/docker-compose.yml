@@ -8,16 +8,13 @@ services:
       - TZ=Europe/Amsterdam
     ports:
       - "1880:1880"
-    networks:
-      - default
     volumes:
       - node-red-data:/data
+      - ./output:/usr/src/node-red/iow_data
 
 
   mosquitto:
     image: eclipse-mosquitto
-    networks:
-      - default
     ports:
       - 8083:8083
       - 9001:9001
@@ -34,6 +31,3 @@ services:
 
 volumes:
   node-red-data:
-
-networks:
-  default:

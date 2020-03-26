@@ -1,0 +1,7 @@
+{
+    "mqtt": {
+        "hostname" : "localhost",
+        "port": 8083,
+        "useSSL" : "false"
+    }
+}

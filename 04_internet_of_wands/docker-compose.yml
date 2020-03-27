@@ -10,7 +10,7 @@ services:
       - "1880:1880"
     volumes:
       - node-red-data:/data
-      - ./output:/usr/src/node-red/iow_data
+      - ./output:/data/output
 
 
   mosquitto:

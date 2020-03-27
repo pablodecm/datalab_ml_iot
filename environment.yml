@@ -11,6 +11,7 @@ dependencies:
   - jupyter
   - jupyter_nbextensions_configurator
   - scikit-learn
+  - make
   - pip:
     - jupyter-contrib-nbextensions
     - tensorflow-gpu==1.15

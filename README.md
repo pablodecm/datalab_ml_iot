@@ -64,8 +64,9 @@ If the environment already exist, it can be updated when a change was made using
 conda env update -f environment.yml
 ```
 
-When the right environment is setup, simply run Jupyter Notebook and use your browser to
+When the right environment is setup, simply activate and run Jupyter Notebook and use your browser to
 go to open the desired notebook:
 ```bash
+conda activate datalab_ml_iot
 jupyter notebook
 ```

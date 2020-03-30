@@ -12,8 +12,11 @@ dependencies:
   - jupyter_nbextensions_configurator
   - scikit-learn
   - make
+  - haversine=2.2.0
+  - folium=0.10.1
   - pip:
     - jupyter-contrib-nbextensions
     - tensorflow-gpu==1.15
     - kaggle==1.5.6
+    - networkx==2.4
     - pip install j2cli[yaml]

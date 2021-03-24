@@ -53,6 +53,23 @@ git clone https://github.com/pablodecm/datalab_ml_iot.git
 cd datalab_ml_iot
 ```
 
+### VSCode Dev Container
+
+The repository is setup for using VSCode and an isolated Docker environment. If you have VSCode already
+installed with the Remote Extension(you can follow the
+[official instructions](https://code.visualstudio.com/docs/setup/setup-overview) alternatively) and
+Docker and Docker Compose setup in your machine, run the following command:
+
+```bash
+code .
+```
+That will open VSCode and then click `Open in Remote Container` in the
+bottom right of the screen. A development environment image will be built and accessed
+automatically. You can directly access Jupyter Lab at http://localhost:8888/ with the browser
+of the host machine.
+
+### Conda-based Isolated Environment
+
 The basic Python environment required to execute the Jupyter Notebooks is provided
 in the `environment.yml` file in the root of the repository. If you have already Anaconda/Miniconda
 in your system (otherwise follow [this instructions](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html#)), You can create it with the following command:
@@ -72,5 +89,5 @@ go to open the desired notebook:
 
 ```bash
 conda activate datalab_ml_iot
-jupyter notebook
+jupyter lab
 ```

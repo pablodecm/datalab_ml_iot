@@ -1,0 +1,10 @@
+{
+    "name": "Practical Data Science for IOT",
+    "dockerComposeFile": "./docker-compose.yml",
+    "workspaceFolder": "/home/jovyan/datalab_ml_iot",
+    "service": "dev-environment",
+    "remoteUser": "jovyan",
+    "forwardPorts": [
+        8888
+    ]
+}

@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  dev-environment:
+    user: root
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ..:/home/jovyan/datalab_ml_iot:cached
+    environment:
+      - GRANT_SUDO=yes
+      - JUPYTER_ENABLE_LAB=yes
+      - CHOWN_HOME=yes
+      - NB_UID=1192605699
+
+    command: start.sh jupyter lab --LabApp.token='' --notebook-dir="/home/jovyan/datalab_ml_iot"

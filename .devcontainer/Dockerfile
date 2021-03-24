@@ -5,7 +5,8 @@ USER root
 
 RUN conda install --quiet --yes \
                 "make=4.3" \
-                "haversine=2.2.0" && \
+                "haversine=2.2.0" \
+                "git-lfs=2.13.2" && \
     conda clean --all -f -y && \
     fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_USER}"

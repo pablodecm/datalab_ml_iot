@@ -11,6 +11,7 @@ dependencies:
   - scikit-learn=0.24.1
   - make=4.3
   - haversine=2.2.0
+  - git-lfs=2.13.2
   - pip:
       - tensorflow-gpu==2.4.1
       - kaggle==1.5.12

@@ -32,8 +32,8 @@ Here there is a list and a short description of each part of the tutorial:
   pickup/drop-off coordinates, taxi information and additional datasets.
   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/github/pablodecm/datalab_ml_iot/blob/master/02_trip_duration_prediction/trip_duration_prediction.ipynb)
 
-3. `03_iot_for_pandemics/iot_for_pandemics.ipynb`: brainstorm the viability and data aspects of some IOT-based solutions or systems that could help us with the current and future pandemics. Example of contact tracing using your own Google Location history.
-  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/github/pablodecm/datalab_ml_iot/blob/master/03_iot_for_pandemics/iot_for_pandemics.ipynb)
+3. `03_solving_problems/solving_problems.ipynb`: brainstorm the viability and data aspects of some IOT-based and data science solutions or systems that could help us with real word problems. Example of pandemic contact tracing using your own Google Location history.
+  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/github/pablodecm/datalab_ml_iot/blob/master/03_solving_problems/solving_problems.ipynb)
 
 4. `04_internet_of_wands/internet_of_wands.ipynb` (WIP): using a smartphone as a magic wand,
   collect data of labelled magic spells and then train a spell recognition model

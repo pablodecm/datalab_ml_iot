@@ -18,7 +18,7 @@ RUN pip install "tensorflow==2.4.1" \
                 "j2cli[yaml]==0.3.10" \
                 "folium==0.12.1" \
                 "networkx==2.5" \
-                "nbstriptout==0.3.9" && \
+                "nbstripout==0.3.9" && \
     conda clean --all -f -y && \
     fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_USER}"

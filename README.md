@@ -3,10 +3,6 @@
 These repository includes the materials for three lectures on Data Science
 applied to IoT data for the Master of Data Science (jointly organized by UC-UIMP-CSIC).
 
-Check this or post in this Gitter chat room for related questions and announcements:
-
-- 2021 UC-UIMP-CSIC Master of Data Science [![Gitter](https://badges.gitter.im/datalab_ml_iot/master_2021_unican.svg)](https://gitter.im/datalab_ml_iot/master_2021_unican?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-
 ## Use Cases and Notebooks
 
 The tutorial is broken in six parts, each contained within a folder and based around
@@ -40,10 +36,6 @@ Here there is a list and a short description of each part of the tutorial:
   based on our own sensor data.
   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/github/pablodecm/datalab_ml_iot/blob/master/04_internet_of_wands/internet_of_wands.ipynb)
 
-5. `05_computer_vision_for_iot/computer_vision_for_iot.ipynb` (WIP): we will use pre-trained
-   computer vision models that could run on the edge to identify and analyse objects in video camera footage
-  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]( https://colab.research.google.com/github/pablodecm/datalab_ml_iot/blob/master/05_computer_vision_for_iot/computer_vision_for_iot.ipynb)
-
 ## Local Setup
 
 First, download this repo and enter the folder:
@@ -63,6 +55,7 @@ Docker and Docker Compose setup in your machine, run the following command:
 ```bash
 code .
 ```
+
 That will open VSCode and then click `Open in Remote Container` in the
 bottom right of the screen. A development environment image will be built and accessed
 automatically. You can directly access Jupyter Lab at http://localhost:8888/ with the browser

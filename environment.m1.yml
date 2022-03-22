@@ -1,5 +1,6 @@
 name: datalab_ml_iot
 channels:
+  - apple
   - conda-forge
 dependencies:
   - python=3.8
@@ -10,13 +11,14 @@ dependencies:
   - pip=22.0.4
   - scikit-learn=1.0.2
   - make=4.3
-  - haversine=2.2.0
+  - haversine=2.5.1
   - git-lfs=3.1.2
   - xgboost=1.5.0
-  - tensorflow=2.5.0
+  - tensorflow-deps=2.5.0
   - pip:
       - kaggle==1.5.12
       - networkx==2.5
       - j2cli[yaml]==0.3.10
       - folium==0.12.1
       - nbstripout==0.3.9
+      - tensorflow-macos==2.5.0

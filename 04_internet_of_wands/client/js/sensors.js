@@ -80,7 +80,20 @@ if ("Accelerometer" in window && "Gyroscope" in window) {
 
 // init sensors by starting listerners
 function init_sensors() {
-  if ("Accelerometer" in window && "Gyroscope" in window) {
+
+  if (typeof (DeviceMotionEvent.requestPermission) === "function") {
+    // (optional) Do something before API request prompt.
+    DeviceMotionEvent.requestPermission()
+      .then(response => {
+        document.getElementById("moApi").innerHTML =
+          "Permissions Granted";
+        // (optional) Do something after API prompt dismissed.
+        if (response == "granted") {
+          window.addEventListener("devicemotion", onDeviceMotion, false)
+        }
+      })
+      .catch(console.error)
+  } else if ("Accelerometer" in window && "Gyroscope" in window) {
     accelerometer.addEventListener("reading", accel_listen);
     accelerometer.start();
     gyroscope.addEventListener("reading", gyro_listen);

@@ -130,6 +130,20 @@
 
   <script>
 
+    // this will be executed in first click
+    function requestDeviceMotion() {
+      if (window.DeviceMotionEvent && DeviceMotionEvent.requestPermission) {
+        // this will only be in iphone
+        DeviceMotionEvent.requestPermission().then(function (state) {
+          window.removeEventListener("click", firstClick);
+        }
+        )
+      } else {
+        // remove first click listener
+        window.removeEventListener("click", firstClick);
+      }
+    }
+
     // will be acessed later
     var wizard_name_el = document.getElementById("wizard-name")
     var browser_select_el = document.getElementById("browser-select")
@@ -166,15 +180,6 @@
       }
     }
 
-    // in case safari is selected
-    browser_select_el.onchange = function () {
-      if (browser_select_el.value == "safari") {
-        document.getElementById("spell-description").innerHTML = "Safari and Sensors know issue: <br>" +
-          "If using iOS Safari, need to toogle on sensor data in Settings->Safari->Privacy" +
-          "and Security or alternatively use Google Chrome";
-      }
-    };
-
     function on_spell_change() {
       // show spell movement when spell-select changes
       var spell_text = {
@@ -205,7 +210,7 @@
     });
 
     // connect to MQTT server, first create a client
-    var loc = { hostname: "localhost", port: "8083" };
+    var loc = { hostname: "iow.pablodecm.com", port: "8083" };
     var client = new Paho.MQTT.Client(
       loc.hostname,
       Number(loc.port),
@@ -213,7 +218,7 @@
     );
 
     // connect the client
-    client.connect({ onSuccess: onConnect, useSSL: false, userName: "datalab", password: "datalab" });
+    client.connect({ onSuccess: onConnect, useSSL: true, userName: "datalab", password: "datalab" });
 
     var n_msg_del = 0;
     // called when the client connects
@@ -294,6 +299,9 @@
         location.reload(true);
       }
     }, 5000);
+
+    // add on first click
+    window.addEventListener("click", requestDeviceMotion);
 
   </script>
 </body>

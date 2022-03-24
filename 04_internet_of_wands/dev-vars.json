@@ -1,7 +1,7 @@
 {
     "mqtt": {
-        "hostname" : "localhost",
+        "hostname" : "iow.pablodecm.com",
         "port": 8083,
-        "useSSL" : "false"
+        "useSSL" : "true"
     }
 }

@@ -130,6 +130,20 @@
 
   <script>
 
+    // this will be executed in first click
+    function requestDeviceMotion() {
+      if (window.DeviceMotionEvent && DeviceMotionEvent.requestPermission) {
+        // this will only be in iphone
+        DeviceMotionEvent.requestPermission().then(function (state) {
+          window.removeEventListener("click", firstClick);
+        }
+        )
+      } else {
+        // remove first click listener
+        window.removeEventListener("click", firstClick);
+      }
+    }
+
     // will be acessed later
     var wizard_name_el = document.getElementById("wizard-name")
     var browser_select_el = document.getElementById("browser-select")
@@ -294,6 +308,9 @@
         location.reload(true);
       }
     }, 5000);
+
+    // add on first click
+    window.addEventListener("click", requestDeviceMotion);
 
   </script>
 </body>

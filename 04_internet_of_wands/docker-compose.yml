@@ -11,28 +11,28 @@ services:
       - node-red-data:/data
       - ./output:/data/output
 
-  # mosquitto:
-  #   image: eclipse-mosquitto:1.6.14
-  #   ports:
-  #     - 1883:1883
-  #     - 8083:8083
-  #     - 9001:9001
-  #   volumes:
-  #     - ./mosquitto/dev.conf:/mosquitto/config/mosquitto.conf
-  #     - ./iow/pablodecm/com:/etc/nginx/certs
-  #   ulimits:
-  #     nofile:
-  #       soft: "65536"
-  #       hard: "65536"
+  mosquitto:
+    image: eclipse-mosquitto:1.6.14
+    ports:
+      - 1883:1883
+      #- 8083:8083
+      #- 9001:9001
+    volumes:
+      - ./mosquitto/dev.conf:/mosquitto/config/mosquitto.conf
+      #- ./iow/pablodecm/com:/etc/nginx/certs
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
 
   nginx:
     build: nginx/.
     ports:
       - 80:80
-      - 443:443
+      #- 443:443
     volumes:
       - ./dev-static:/usr/share/nginx/html
-      - ./iow.pablodecm.com:/etc/nginx/certs
+      #- ./iow.pablodecm.com:/etc/nginx/certs
 
 volumes:
   node-red-data:

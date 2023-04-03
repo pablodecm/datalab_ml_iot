@@ -9,7 +9,7 @@ docker-compose up
 ```
 
 Which will setup the following services:
-    - Eclipe Mosquito MQTT Broker: running in port 1883 when reunning locally.
+    - Eclipe Mosquito MQTT Broker: running in port 1883 when running locally.
     - Node Red: for playing with the MQTT broker you can access it at http://localhost:1880
     - NGINX server: serving the static webapp to record data at http://localhost
 

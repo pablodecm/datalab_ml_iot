@@ -37,6 +37,16 @@
         </td>
       </tr>
       <tr>
+        <td>Mode:</td>
+        <td>
+          <select id="mode-select">
+            <option value="mqtt-collect">MQTT Collect</option>
+            <option value="api-collect">API Collect</option>
+            <option value="api-predict">API Predict</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
         <td>Wand Properties:</td>
         <td>
           <select id="device-select">
@@ -146,6 +156,7 @@
 
     // will be acessed later
     var wizard_name_el = document.getElementById("wizard-name")
+    var mode_select_el = document.getElementById("mode-select")
     var browser_select_el = document.getElementById("browser-select")
     var device_select_el = document.getElementById("device-select")
     var spell_select_el = document.getElementById("spell-select")
@@ -154,6 +165,10 @@
     var named_wizard = localStorage.getItem("named-wizard");
     if (named_wizard) {
       wizard_name_el.value = named_wizard;
+    }
+    var selected_mode = localStorage.getItem("selected-mode");
+    if (selected_mode) {
+      mode_select_el.value = selected_mode;
     }
     var selected_browser = localStorage.getItem("selected-browser");
     if (selected_browser) {
@@ -172,6 +187,7 @@
     function storeInput() {
       try {
         localStorage.setItem("named-wizard", wizard_name_el.value);
+        localStorage.setItem("selected-mode", mode_select_el.value);
         localStorage.setItem("selected-browser", browser_select_el.value);
         localStorage.setItem("selected-device", device_select_el.value);
         localStorage.setItem("selected-spell", spell_select_el.value);
@@ -277,9 +293,47 @@
         start_timestamp: start_timestamp
       }
 
-      data_message = new Paho.MQTT.Message(JSON.stringify(data_json));
-      data_message.destinationName = "training";
-      client.send(data_message);
+      console.log(mode_select_el.value)
+      if (mode_select_el.value == "mqtt-collect") {
+        // send data to MQTT server if in MQTT collect mode
+        data_message = new Paho.MQTT.Message(JSON.stringify(data_json));
+        data_message.destinationName = "training";
+        client.send(data_message);
+      } else if (mode_select_el.value == "api-collect") {
+        // send data to API if in API collect mode
+        response = fetch("http://localhost:8000/api/collect", {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data_json)
+        }).then(
+          response => {
+            n_msg_del += 1;
+            connect_button.innerHTML = "Connected (" + n_msg_del + " delivered)";
+            document.getElementById("connect_button").innerHTML = "Data Sent (" + n_msg_del + " sent)";
+          }
+        )
+      } else if (mode_select_el.value == "api-predict") {
+        predict_data_json = {
+          accel_data: accel_data,
+          gyro_data: gyro_data,
+          start_timestamp: start_timestamp
+        }
+        // send data to API if in API predict mode
+        response = fetch("http://localhost:8000/api/predict", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data_json)
+        }).then(response => response.json())
+          .then(data => {
+            document.getElementById("connect_button").innerHTML = "Predicted Spell: " + data["spell"];
+            document.getElementById("connect_button").style.backgroundColor = "#ffa500";
+          });
+
+      }
     }
 
     // add listeners

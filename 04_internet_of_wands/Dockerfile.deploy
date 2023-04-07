@@ -1,0 +1,15 @@
+FROM python:3.8
+
+WORKDIR /deployment/
+
+
+# install dependencies
+RUN pip install --no-cache-dir pandas scikit-learn==1.0.2 fastapi uvicorn[standard]
+
+# copy our software
+COPY deployment/*.py .
+COPY optimized_gb_clf.joblib ..
+COPY ./dev-static ../dev-static
+
+# define command
+CMD ["uvicorn","server:app","--host","0.0.0.0"]

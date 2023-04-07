@@ -34,5 +34,14 @@ services:
       - ./dev-static:/usr/share/nginx/html
       #- ./iow.pablodecm.com:/etc/nginx/certs
 
+  fastapi:
+    build:
+      context: .
+      dockerfile: Dockerfile.deploy
+    ports:
+      - 8000:8000
+    volumes:
+      - ./deployment/iow_data:/deployment/iow_data
+
 volumes:
   node-red-data:

@@ -1,2 +1,6 @@
 .ipynb_checkpoints
 .DS_Store
+04_internet_of_wands/iow_data
+04_internet_of_wands/deployment/iow_data
+04_internet_of_wands/deployment/dev-static
+*.pyc

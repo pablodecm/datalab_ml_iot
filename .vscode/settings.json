@@ -11,5 +11,6 @@
         "miniconda",
         "ml",
         "uimp"
-    ]
+    ],
+    "python.formatting.provider": "black"
 }

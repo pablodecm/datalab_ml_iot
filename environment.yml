@@ -1,4 +1,4 @@
-name: datalab_ml_iot_d
+name: datalab_ml_iot
 channels:
   - conda-forge
 dependencies:

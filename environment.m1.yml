@@ -1,4 +1,4 @@
-name: datalab_ml_iot
+name: datalab_ml_iot_d
 channels:
   - apple
   - conda-forge

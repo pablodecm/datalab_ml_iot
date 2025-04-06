@@ -68,14 +68,14 @@ in the `environment.yml` file in the root of the repository. If you have already
 in your system (otherwise follow [this instructions](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html#)), You can create it with the following command:
 
 ```bash
-# use environment.m1.yml if you have a M1 arm64 machine
+# use environment.m1.yml if you have a apple silicon machine
 conda env create -f environment.yml
 ```
 
 If the environment already exist, it can be updated when a change was made using the command:
 
 ```bash
-# use environment.m1.yml if you have a M1 arm64 machine
+# use environment.m1.yml if you have a apple silicon machine
 conda env update -f environment.yml
 ```
 

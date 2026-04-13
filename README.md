@@ -5,7 +5,7 @@ applied to IoT data for the Master of Data Science (jointly organized by UC-UIMP
 
 ## Use Cases and Notebooks
 
-The tutorial is broken in six parts, each contained within a folder and based around
+The tutorial is broken in five parts, each contained within a folder and based around
 a single Jupyter Notebook with a description and exercises.
 The notebooks have been prepared to allow their
 execution in Google Colaboratory or a similar notebook service,

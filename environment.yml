@@ -6,6 +6,7 @@ dependencies:
   - jupyterlab
   - numpy>=1.23,<2
   - matplotlib
+  - seaborn
   - pandas
   - pip>=23
   - scikit-learn

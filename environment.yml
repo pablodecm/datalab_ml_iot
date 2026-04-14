@@ -14,6 +14,9 @@ dependencies:
   - git-lfs
   - xgboost
   - paho-mqtt
+  - uvicorn
+  - fastapi
+  - pydantic
   - pip:
       - tensorflow==2.16.2
       - kaggle

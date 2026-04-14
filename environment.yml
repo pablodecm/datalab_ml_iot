@@ -2,22 +2,22 @@ name: datalab_ml_iot
 channels:
   - conda-forge
 dependencies:
-  - python=3.8
-  - jupyterlab=3.3.2
-  - numpy=1.19
-  - matplotlib=3.5.1
-  - pandas=1.4.1
-  - pip=22.0.4
-  - scikit-learn=1.0.2
-  - make=4.3
-  - haversine=2.2.0
-  - git-lfs=3.1.2
-  - xgboost=1.5.0
-  - paho-mqtt=1.6.1
+  - python=3.11
+  - jupyterlab
+  - numpy>=1.23,<2
+  - matplotlib
+  - pandas
+  - pip>=23
+  - scikit-learn
+  - make
+  - haversine
+  - git-lfs
+  - xgboost
+  - paho-mqtt
   - pip:
-      - tensorflow==2.5.0
-      - kaggle==1.5.12
-      - networkx==2.5
-      - j2cli[yaml]==0.3.10
-      - folium==0.12.1
-      - nbstripout==0.3.9
+      - tensorflow==2.16.2
+      - kaggle
+      - networkx
+      - j2cli[yaml]
+      - folium
+      - nbstripout
